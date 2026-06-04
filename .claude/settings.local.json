@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n '\\\\$HERMES_HOME/hermes-agent' scripts/install.sh)",
+      "Bash(sed -i '' 's|%LOCALAPPDATA%\\\\\\\\hermes\\\\\\\\git|%LOCALAPPDATA%\\\\\\\\arba\\\\\\\\git|g; s|%LOCALAPPDATA%\\\\\\\\\\\\\\\\hermes\\\\\\\\\\\\\\\\git|%LOCALAPPDATA%\\\\\\\\\\\\\\\\arba\\\\\\\\\\\\\\\\git|g' scripts/install.ps1)",
+      "Bash(sed -i '' 's|\\\\$env:TEMP\\\\\\\\hermes-agent-\\\\\\([^\\\\\\\\]*\\\\\\)|\\\\$env:TEMP\\\\\\\\arba-\\\\1|g; s|\\\\$env:TEMP\\\\\\\\hermes-\\\\\\([^\\\\\\\\]*\\\\\\)|\\\\$env:TEMP\\\\\\\\arba-\\\\1|g' scripts/install.ps1)",
+      "Bash(sed -i '' 's|hermes-agent\\\\\\\\\\\\\\\\\\\\\\\\|\\\\arba\\\\\\\\\\\\\\\\|g' scripts/install.ps1)",
+      "Bash(sed -i '' 's|hermes-agent\\\\[\\([\\\\w-]+\\)\\\\]|arba[\\\\1]|g' scripts/install.ps1)",
+      "Bash(sed -i '' 's|install hermes-agent package|install arba package|g' scripts/install.ps1)",
+      "Bash(sed -i '' 's|https://hermes-agent\\\\.nousresearch\\\\.com/docs/api/skills-index\\\\.json|https://arcadiaglobalteknologi.com/docs/api/skills-index.json|g' tools/skills_hub.py)",
+      "Bash(sed -i '' 's|ghcr\\\\.io/nousresearch/hermes-agent|ghcr.io/arcadiaglobalteknologi/arba|g' tools/browser_tool.py)",
+      "Bash(sed -i '' 's|\"User-Agent\": \"Arba \\(https://github.com/NousResearch/hermes-agent\\)\"|\"User-Agent\": \"Arba \\(https://github.com/arcadiaglobalteknologi/arba\\)\"|g' tools/discord_tool.py)",
+      "Bash(sed -i '' 's|Modifications by NousResearch for the Arba plugin port:|Modifications by Arcadia Global Teknologi for the Arba plugin port:|g' plugins/security-guidance/patterns.py)",
+      "Bash(sed -i '' 's|NousResearch, MIT-licensed alongside the rest of hermes-agent\\\\.|Arcadia Global Teknologi, MIT-licensed alongside the rest of Arba.|g' plugins/security-guidance/README.md)",
+      "Bash(sed -i '' 's|author: \"Anthropic \\(patterns, Apache-2.0\\) / NousResearch \\(Arba plugin port\\)\"|author: \"Anthropic \\(patterns, Apache-2.0\\) / Arcadia Global Teknologi \\(Arba plugin port\\)\"|g' plugins/security-guidance/plugin.yaml)",
+      "Bash(sed -i '' 's|+https://github.com/NousResearch/hermes-agent|+https://github.com/arcadiaglobalteknologi/arba|g' optional-skills/research/osint-investigation/scripts/_http.py)",
+      "Bash(sed -i '' 's|--repo NousResearch/hermes-agent|--repo arcadiaglobalteknologi/arba|g' optional-skills/devops/watchers/scripts/watch_github.py optional-skills/devops/watchers/SKILL.md)",
+      "Bash(sed -i '' 's|NousResearch/kanban-video-pipeline|arcadiaglobalteknologi/kanban-video-pipeline|g' optional-skills/creative/kanban-video-orchestrator/references/kanban-setup.md optional-skills/creative/kanban-video-orchestrator/SKILL.md optional-skills/creative/kanban-video-orchestrator/scripts/bootstrap_pipeline.py)",
+      "Bash(python3 *)"
+    ]
+  }
+}
