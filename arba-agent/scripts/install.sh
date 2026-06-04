@@ -71,7 +71,7 @@ USE_VENV=true
 RUN_SETUP=true
 SKIP_BROWSER=false
 NO_SKILLS=false
-BRANCH="main"
+BRANCH="master"
 INSTALL_COMMIT=""
 ENSURE_DEPS=""
 POSTINSTALL_MODE=false
@@ -166,7 +166,7 @@ while [[ $# -gt 0 ]]; do
             echo "  --no-skills    Start with a blank slate — seed no bundled skills, and"
             echo "                   write \$HERMES_HOME/.no-bundled-skills so future"
             echo "                   'arba update' runs never inject bundled skills either"
-            echo "  --branch NAME  Git branch to install (default: main)"
+            echo "  --branch NAME  Git branch to install (default: master)"
             echo "  --commit SHA   Pin checkout to a specific commit after clone/update"
             echo "  --manifest     Print desktop bootstrap stage manifest as JSON"
             echo "  --stage NAME   Run one desktop bootstrap stage"
@@ -1155,6 +1155,14 @@ clone_repo() {
             git fetch origin "$INSTALL_COMMIT" || true
         fi
         git checkout --detach "$INSTALL_COMMIT"
+    fi
+
+    # If the repo uses a monorepo layout (code lives in arba-agent/ subdir),
+    # redirect INSTALL_DIR to that subfolder so venv and pip install land correctly.
+    if [ -f "$INSTALL_DIR/arba-agent/pyproject.toml" ] && [ ! -f "$INSTALL_DIR/pyproject.toml" ]; then
+        log_info "Monorepo layout detected — using arba-agent/ as install root"
+        INSTALL_DIR="$INSTALL_DIR/arba-agent"
+        cd "$INSTALL_DIR"
     fi
 
     log_success "Repository ready"
