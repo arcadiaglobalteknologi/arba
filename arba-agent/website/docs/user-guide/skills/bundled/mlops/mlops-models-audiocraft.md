@@ -575,8 +575,8 @@ for desc in descriptions:
 
 ## References
 
-- **[Advanced Usage](https://github.com/arcadiaglobalteknologi/arba/blob/main/skills/mlops/models/audiocraft/references/advanced-usage.md)** - Training, fine-tuning, deployment
-- **[Troubleshooting](https://github.com/arcadiaglobalteknologi/arba/blob/main/skills/mlops/models/audiocraft/references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](https://github.com/arcadiaglobalteknologi/arba/blob/master/arba-agent/skills/mlops/models/audiocraft/references/advanced-usage.md)** - Training, fine-tuning, deployment
+- **[Troubleshooting](https://github.com/arcadiaglobalteknologi/arba/blob/master/arba-agent/skills/mlops/models/audiocraft/references/troubleshooting.md)** - Common issues and solutions
 
 ## Resources
 

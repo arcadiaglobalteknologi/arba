@@ -8,13 +8,13 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [hermes, setup, configuration, multi-agent, spawning, cli, gateway, development]
-    homepage: https://github.com/NousResearch/hermes-agent
+    homepage: https://github.com/arcadiaglobalteknologi/arba
     related_skills: [claude-code, codex, opencode]
 ---
 
 # Arba
 
-Arba is an open-source AI agent framework by Nous Research that runs in your terminal, messaging platforms, and IDEs. It belongs to the same category as Claude Code (Anthropic), Codex (OpenAI), and OpenClaw — autonomous coding and task-execution agents that use tool calling to interact with your system. Arba works with any LLM provider (OpenRouter, Anthropic, OpenAI, DeepSeek, local models, and 15+ others) and runs on Linux, macOS, and WSL.
+Arba is an open-source AI agent framework by Arcadia Global Teknologi that runs in your terminal, messaging platforms, and IDEs. It belongs to the same category as Claude Code (Anthropic), Codex (OpenAI), and OpenClaw — autonomous coding and task-execution agents that use tool calling to interact with your system. Arba works with any LLM provider (OpenRouter, Anthropic, OpenAI, DeepSeek, local models, and 15+ others) and runs on Linux, macOS, and WSL.
 
 What makes Arba different:
 
@@ -29,13 +29,13 @@ People use Arba for software development, research, system administration, data 
 
 **This skill helps you work with Arba effectively** — setting it up, configuring features, spawning additional agent instances, troubleshooting issues, finding the right commands and settings, and understanding how the system works when you need to extend or contribute to it.
 
-**Docs:** https://hermes-agent.nousresearch.com/docs/
+**Docs:** https://arcadiaglobalteknologi.com/docs/
 
 ## Quick Start
 
 ```bash
 # Install
-curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/master/arba-agent/scripts/install.sh | bash
 
 # Interactive chat (default)
 hermes
@@ -153,7 +153,7 @@ arba gateway setup        Configure platforms
 
 Supported platforms: Telegram, Discord, Slack, WhatsApp, Signal, Email, SMS, Matrix, Mattermost, Home Assistant, DingTalk, Feishu, WeCom, BlueBubbles (iMessage), Weixin (WeChat), API Server, Webhooks. Open WebUI connects via the API Server adapter.
 
-Platform docs: https://hermes-agent.nousresearch.com/docs/user-guide/messaging/
+Platform docs: https://arcadiaglobalteknologi.com/docs/user-guide/messaging/
 
 ### Sessions
 
@@ -232,7 +232,7 @@ arba uninstall            Uninstall Arba
 
 Type these during an interactive chat session. New commands land fairly
 often; if something below looks stale, run `/help` in-session for the
-authoritative list or see the [live slash commands reference](https://hermes-agent.nousresearch.com/docs/reference/slash-commands).
+authoritative list or see the [live slash commands reference](https://arcadiaglobalteknologi.com/docs/reference/slash-commands).
 The registry of record is `hermes_cli/commands.py` — every consumer
 (autocomplete, Telegram menu, Slack mapping, `/help`) derives from it.
 
@@ -281,7 +281,7 @@ The registry of record is `hermes_cli/commands.py` — every consumer
 /toolsets            List toolsets (CLI)
 /skills              Search/install skills (CLI)
 /skill <name>        Load a skill into session
-/reload-skills       Re-scan ~/.hermes/skills/ for added/removed skills
+/reload-skills       Re-scan ~/.arba/skills/ for added/removed skills
 /reload              Reload .env variables into the running session (CLI)
 /reload-mcp          Reload MCP servers
 /cron                Manage cron jobs (CLI)
@@ -335,17 +335,17 @@ The registry of record is `hermes_cli/commands.py` — every consumer
 ## Key Paths & Config
 
 ```
-~/.hermes/config.yaml       Main configuration
-~/.hermes/.env              API keys and secrets
+~/.arba/config.yaml       Main configuration
+~/.arba/.env              API keys and secrets
 $HERMES_HOME/skills/        Installed skills
-~/.hermes/sessions/         Gateway routing index, request dumps, *.jsonl transcripts (and optional per-session JSON snapshots when sessions.write_json_snapshots: true)
-~/.hermes/state.db          Canonical session store (SQLite + FTS5)
-~/.hermes/logs/             Gateway and error logs
-~/.hermes/auth.json         OAuth tokens and credential pools
-~/.hermes/hermes-agent/     Source code (if git-installed)
+~/.arba/sessions/         Gateway routing index, request dumps, *.jsonl transcripts (and optional per-session JSON snapshots when sessions.write_json_snapshots: true)
+~/.arba/state.db          Canonical session store (SQLite + FTS5)
+~/.arba/logs/             Gateway and error logs
+~/.arba/auth.json         OAuth tokens and credential pools
+~/.arba/arba/     Source code (if git-installed)
 ```
 
-Profiles use `~/.hermes/profiles/<name>/` with the same layout.
+Profiles use `~/.arba/profiles/<name>/` with the same layout.
 
 ### Config Sections
 
@@ -365,7 +365,7 @@ Edit with `arba config edit` or `arba config set section.key value`.
 | `delegation` | `model`, `provider`, `base_url`, `api_key`, `max_iterations` (50), `reasoning_effort` |
 | `checkpoints` | `enabled`, `max_snapshots` (50) |
 
-Full config reference: https://hermes-agent.nousresearch.com/docs/user-guide/configuration
+Full config reference: https://arcadiaglobalteknologi.com/docs/user-guide/configuration
 
 ### Providers
 
@@ -395,7 +395,7 @@ Full config reference: https://hermes-agent.nousresearch.com/docs/user-guide/con
 | Custom endpoint | Config | `model.base_url` + `model.api_key` in config.yaml |
 | GitHub Copilot ACP | External | `COPILOT_CLI_PATH` or Copilot CLI |
 
-Full provider docs: https://hermes-agent.nousresearch.com/docs/integrations/providers
+Full provider docs: https://arcadiaglobalteknologi.com/docs/integrations/providers
 
 ### Toolsets
 
@@ -489,7 +489,7 @@ Note: YOLO / `approvals.mode: off` does NOT turn off secret redaction. They are 
 
 ### Shell hooks allowlist
 
-Some shell-hook integrations require explicit allowlisting before they fire. Managed via `~/.hermes/shell-hooks-allowlist.json` — prompted interactively the first time a hook wants to run.
+Some shell-hook integrations require explicit allowlisting before they fire. Managed via `~/.arba/shell-hooks-allowlist.json` — prompted interactively the first time a hook wants to run.
 
 ### Disabling the web/browser/image-gen tools
 
@@ -655,7 +655,7 @@ the `cronjob` tool, the `arba cron` CLI (`list`, `add`, `edit`,
   header/footer instead of being mirrored into the target gateway
   session (keeps role alternation intact).
 
-User docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/cron
+User docs: https://arcadiaglobalteknologi.com/docs/user-guide/features/cron
 
 ### Curator (skill lifecycle)
 
@@ -670,13 +670,13 @@ so nothing is lost.
   Bundled + hub-installed skills are off-limits. **Never deletes** —
   max destructive action is archive. Pinned skills are exempt from
   every auto-transition and every LLM review pass.
-- **Telemetry:** sidecar at `~/.hermes/skills/.usage.json` holds
+- **Telemetry:** sidecar at `~/.arba/skills/.usage.json` holds
   per-skill `use_count`, `view_count`, `patch_count`,
   `last_activity_at`, `state`, `pinned`.
 
 Config: `curator.*` (`enabled`, `interval_hours`, `min_idle_hours`,
 `stale_after_days`, `archive_after_days`, `backup.*`).
-User docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/curator
+User docs: https://arcadiaglobalteknologi.com/docs/user-guide/features/curator
 
 ### Kanban (multi-agent work queue)
 
@@ -705,7 +705,7 @@ sessions still have zero `kanban_*` schema footprint unless configured.
   `HERMES_KANBAN_BOARD` pinned in env); tenant is a soft namespace
   within a board for workspace-path + memory-key isolation.
 
-User docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban
+User docs: https://arcadiaglobalteknologi.com/docs/user-guide/features/kanban
 
 ---
 
@@ -830,7 +830,7 @@ and logs — avoids shell-escaping backslashes in bash.
 ### Gateway issues
 Check logs first:
 ```bash
-grep -i "failed to send\|error" ~/.hermes/logs/gateway.log | tail -20
+grep -i "failed to send\|error" ~/.arba/logs/gateway.log | tail -20
 ```
 
 Common gateway problems:
@@ -856,27 +856,27 @@ arba config set auxiliary.vision.model <model_name>
 
 | Looking for... | Location |
 |----------------|----------|
-| Config options | `arba config edit` or [Configuration docs](https://hermes-agent.nousresearch.com/docs/user-guide/configuration) |
-| Available tools | `arba tools list` or [Tools reference](https://hermes-agent.nousresearch.com/docs/reference/tools-reference) |
-| Slash commands | `/help` in session or [Slash commands reference](https://hermes-agent.nousresearch.com/docs/reference/slash-commands) |
-| Skills catalog | `arba skills browse` or [Skills catalog](https://hermes-agent.nousresearch.com/docs/reference/skills-catalog) |
-| Provider setup | `arba model` or [Providers guide](https://hermes-agent.nousresearch.com/docs/integrations/providers) |
-| Platform setup | `arba gateway setup` or [Messaging docs](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/) |
-| MCP servers | `arba mcp list` or [MCP guide](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) |
-| Profiles | `arba profile list` or [Profiles docs](https://hermes-agent.nousresearch.com/docs/user-guide/profiles) |
-| Cron jobs | `arba cron list` or [Cron docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/cron) |
-| Memory | `arba memory status` or [Memory docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory) |
-| Env variables | `arba config env-path` or [Env vars reference](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) |
-| CLI commands | `arba --help` or [CLI reference](https://hermes-agent.nousresearch.com/docs/reference/cli-commands) |
-| Gateway logs | `~/.hermes/logs/gateway.log` |
+| Config options | `arba config edit` or [Configuration docs](https://arcadiaglobalteknologi.com/docs/user-guide/configuration) |
+| Available tools | `arba tools list` or [Tools reference](https://arcadiaglobalteknologi.com/docs/reference/tools-reference) |
+| Slash commands | `/help` in session or [Slash commands reference](https://arcadiaglobalteknologi.com/docs/reference/slash-commands) |
+| Skills catalog | `arba skills browse` or [Skills catalog](https://arcadiaglobalteknologi.com/docs/reference/skills-catalog) |
+| Provider setup | `arba model` or [Providers guide](https://arcadiaglobalteknologi.com/docs/integrations/providers) |
+| Platform setup | `arba gateway setup` or [Messaging docs](https://arcadiaglobalteknologi.com/docs/user-guide/messaging/) |
+| MCP servers | `arba mcp list` or [MCP guide](https://arcadiaglobalteknologi.com/docs/user-guide/features/mcp) |
+| Profiles | `arba profile list` or [Profiles docs](https://arcadiaglobalteknologi.com/docs/user-guide/profiles) |
+| Cron jobs | `arba cron list` or [Cron docs](https://arcadiaglobalteknologi.com/docs/user-guide/features/cron) |
+| Memory | `arba memory status` or [Memory docs](https://arcadiaglobalteknologi.com/docs/user-guide/features/memory) |
+| Env variables | `arba config env-path` or [Env vars reference](https://arcadiaglobalteknologi.com/docs/reference/environment-variables) |
+| CLI commands | `arba --help` or [CLI reference](https://arcadiaglobalteknologi.com/docs/reference/cli-commands) |
+| Gateway logs | `~/.arba/logs/gateway.log` |
 | Session files | `arba sessions browse` (reads state.db) |
-| Source code | `~/.hermes/hermes-agent/` |
+| Source code | `~/.arba/arba/` |
 
 ---
 
 ## Contributor Quick Reference
 
-For occasional contributors and PR authors. Full developer docs: https://hermes-agent.nousresearch.com/docs/developer-guide/
+For occasional contributors and PR authors. Full developer docs: https://arcadiaglobalteknologi.com/docs/developer-guide/
 
 ### Project Layout
 
@@ -901,7 +901,7 @@ hermes-agent/
 └── website/              # Docusaurus docs site
 ```
 
-Config: `~/.hermes/config.yaml` (settings), `~/.hermes/.env` (API keys).
+Config: `~/.arba/config.yaml` (settings), `~/.arba/.env` (API keys).
 
 ### Adding a Tool (3 files)
 
@@ -960,7 +960,7 @@ python -m pytest tests/ -o 'addopts=' -q   # Full suite
 python -m pytest tests/tools/ -q            # Specific area
 ```
 
-- Tests auto-redirect `HERMES_HOME` to temp dirs — never touch real `~/.hermes/`
+- Tests auto-redirect `HERMES_HOME` to temp dirs — never touch real `~/.arba/`
 - Run full suite before pushing any change
 - Use `-o 'addopts='` to clear any baked-in pytest flags
 

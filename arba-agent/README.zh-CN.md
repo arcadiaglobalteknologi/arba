@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://arcadiaglobalteknologi.com/docs/"><img src="https://img.shields.io/badge/Docs-hermes--agent.arcadiaglobalteknologi.com-FFD700?style=for-the-badge" alt="Documentation"></a>
   <a href="https://arcadiaglobalteknologi.com"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="https://github.com/arcadiaglobalteknologi/arba/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+  <a href="https://github.com/arcadiaglobalteknologi/arba/blob/master/arba-agent/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
   <a href="https://arcadiaglobalteknologi.com"><img src="https://img.shields.io/badge/Built%20by-Arcadia%20Global%20Teknologi-blueviolet?style=for-the-badge" alt="Built by Arcadia Global Teknologi"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/Lang-English-lightgrey?style=for-the-badge" alt="English"></a>
 </p>
@@ -31,7 +31,7 @@
 ## 快速安装
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/master/arba-agent/scripts/install.sh | bash
 ```
 
 支持 Linux、macOS、WSL2 和 Android (Termux)。安装程序会自动处理平台特定的配置。

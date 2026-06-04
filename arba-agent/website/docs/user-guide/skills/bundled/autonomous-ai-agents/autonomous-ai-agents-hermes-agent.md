@@ -52,7 +52,7 @@ People use Hermes for software development, research, system administration, dat
 
 ```bash
 # Install
-curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/master/arba-agent/scripts/install.sh | bash
 
 # Interactive chat (default)
 hermes

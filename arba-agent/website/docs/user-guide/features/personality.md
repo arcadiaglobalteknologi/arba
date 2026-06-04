@@ -47,6 +47,7 @@ This keeps personality predictable.
 If Hermes loaded `SOUL.md` from whatever directory you happened to launch it in, your personality could change unexpectedly between projects. By loading only from `HERMES_HOME`, the personality belongs to the Hermes instance itself.
 
 That also makes it easier to teach users:
+
 - "Edit `~/.hermes/SOUL.md` to change Hermes' default personality."
 
 ## Where to edit it
@@ -66,6 +67,7 @@ $HERMES_HOME/SOUL.md
 ## What should go in SOUL.md?
 
 Use it for durable voice and personality guidance, such as:
+
 - tone
 - communication style
 - level of directness
@@ -74,6 +76,7 @@ Use it for durable voice and personality guidance, such as:
 - how Hermes should handle uncertainty, disagreement, or ambiguity
 
 Use it less for:
+
 - one-off project instructions
 - file paths
 - repo conventions
@@ -84,6 +87,7 @@ Those belong in `AGENTS.md`, not `SOUL.md`.
 ## Good SOUL.md content
 
 A good SOUL file is:
+
 - stable across contexts
 - broad enough to apply in many conversations
 - specific enough to materially shape the voice
@@ -98,6 +102,7 @@ You are a pragmatic senior engineer with strong taste.
 You optimize for truth, clarity, and usefulness over politeness theater.
 
 ## Style
+
 - Be direct without being cold
 - Prefer substance over filler
 - Push back when something is a bad idea
@@ -105,12 +110,14 @@ You optimize for truth, clarity, and usefulness over politeness theater.
 - Keep explanations compact unless depth is useful
 
 ## What to avoid
+
 - Sycophancy
 - Hype language
 - Repeating the user's framing if it's wrong
 - Overexplaining obvious things
 
 ## Technical posture
+
 - Prefer simple systems over clever systems
 - Care about operational reality, not idealized architecture
 - Treat edge cases as part of the design, not cleanup
@@ -121,10 +128,11 @@ You optimize for truth, clarity, and usefulness over politeness theater.
 `SOUL.md` content goes directly into slot #1 of the system prompt — the agent identity position. No wrapper language is added around it.
 
 The content goes through:
+
 - prompt-injection scanning
 - truncation if it is too large
 
-If the file is empty, whitespace-only, or cannot be read, Hermes falls back to a built-in default identity ("You are Hermes Agent, an intelligent AI assistant created by Nous Research..."). This fallback also applies when `skip_context_files` is set (e.g., in subagent/delegation contexts).
+If the file is empty, whitespace-only, or cannot be read, Hermes falls back to a built-in default identity ("You are Hermes Agent, an intelligent AI assistant created by Arcadia Global Teknologi.."). This fallback also applies when `skip_context_files` is set (e.g., in subagent/delegation contexts).
 
 ## Security scanning
 
@@ -137,7 +145,9 @@ That means you should still keep it focused on persona/voice rather than trying 
 This is the most important distinction.
 
 ### SOUL.md
+
 Use for:
+
 - identity
 - tone
 - style
@@ -145,7 +155,9 @@ Use for:
 - personality-level behavior
 
 ### AGENTS.md
+
 Use for:
+
 - project architecture
 - coding conventions
 - tool preferences
@@ -153,6 +165,7 @@ Use for:
 - commands, ports, paths, deployment notes
 
 A useful rule:
+
 - if it should follow you everywhere, it belongs in `SOUL.md`
 - if it belongs to a project, it belongs in `AGENTS.md`
 
@@ -163,10 +176,12 @@ A useful rule:
 `/personality` is a session-level overlay that changes or supplements the current system prompt.
 
 So:
+
 - `SOUL.md` = baseline voice
 - `/personality` = temporary mode switch
 
 Examples:
+
 - keep a pragmatic default SOUL, then use `/personality teacher` for a tutoring conversation
 - keep a concise SOUL, then use `/personality creative` for brainstorming
 
@@ -174,22 +189,22 @@ Examples:
 
 Hermes ships with built-in personalities you can switch to with `/personality`.
 
-| Name | Description |
-|------|-------------|
-| **helpful** | Friendly, general-purpose assistant |
-| **concise** | Brief, to-the-point responses |
-| **technical** | Detailed, accurate technical expert |
-| **creative** | Innovative, outside-the-box thinking |
-| **teacher** | Patient educator with clear examples |
-| **kawaii** | Cute expressions, sparkles, and enthusiasm ★ |
-| **catgirl** | Neko-chan with cat-like expressions, nya~ |
-| **pirate** | Captain Hermes, tech-savvy buccaneer |
-| **shakespeare** | Bardic prose with dramatic flair |
-| **surfer** | Totally chill bro vibes |
-| **noir** | Hard-boiled detective narration |
-| **uwu** | Maximum cute with uwu-speak |
-| **philosopher** | Deep contemplation on every query |
-| **hype** | MAXIMUM ENERGY AND ENTHUSIASM!!! |
+| Name            | Description                                  |
+| --------------- | -------------------------------------------- |
+| **helpful**     | Friendly, general-purpose assistant          |
+| **concise**     | Brief, to-the-point responses                |
+| **technical**   | Detailed, accurate technical expert          |
+| **creative**    | Innovative, outside-the-box thinking         |
+| **teacher**     | Patient educator with clear examples         |
+| **kawaii**      | Cute expressions, sparkles, and enthusiasm ★ |
+| **catgirl**     | Neko-chan with cat-like expressions, nya~    |
+| **pirate**      | Captain Hermes, tech-savvy buccaneer         |
+| **shakespeare** | Bardic prose with dramatic flair             |
+| **surfer**      | Totally chill bro vibes                      |
+| **noir**        | Hard-boiled detective narration              |
+| **uwu**         | Maximum cute with uwu-speak                  |
+| **philosopher** | Deep contemplation on every query            |
+| **hype**        | MAXIMUM ENERGY AND ENTHUSIASM!!!             |
 
 ## Switching personalities with commands
 
@@ -236,6 +251,7 @@ A strong default setup is:
 3. Use `/personality` only when you want a temporary mode shift
 
 That gives you:
+
 - a stable voice
 - project-specific behavior where it belongs
 - temporary control when needed
@@ -243,6 +259,7 @@ That gives you:
 ## How personality interacts with the full prompt
 
 At a high level, the prompt stack includes:
+
 1. **SOUL.md** (agent identity — or built-in fallback if SOUL.md is unavailable)
 2. tool-aware behavior guidance
 3. memory/user context

@@ -24,23 +24,23 @@ Don't have a subscription yet? [portal.nousresearch.com/manage-subscription](htt
 
 The Portal proxies a curated catalog of agentic models from across the ecosystem — billed against your Nous subscription instead of one credit balance per lab.
 
-| Family | Models |
-|--------|--------|
-| **Anthropic Claude** | Opus 4.7, Opus 4.6, Sonnet 4.6, Haiku 4.5 |
-| **OpenAI** | GPT-5.5, GPT-5.5 Pro, GPT-5.4 Mini, GPT-5.4 Nano, GPT-5.3 Codex |
-| **Google Gemini** | Gemini 3 Pro Preview, Gemini 3 Flash Preview, Gemini 3.1 Pro Preview, Gemini 3.1 Flash Lite Preview |
-| **DeepSeek** | DeepSeek V4 Pro |
-| **Qwen** | Qwen3.7-Max, Qwen3.6-35B-A3B |
-| **Kimi / Moonshot** | Kimi K2.6 |
-| **GLM / Zhipu** | GLM-5.1 |
-| **MiniMax** | MiniMax M2.7 |
-| **xAI** | Grok 4.3 |
-| **NVIDIA** | Nemotron-3 Super 120B-A12B |
-| **Tencent** | Hunyuan 3 Preview |
-| **Xiaomi** | MiMo V2.5 Pro |
-| **StepFun** | Step 3.5 Flash |
-| **Hermes** | Hermes-4-70B, Hermes-4-405B (chat, see [note below](#a-note-on-hermes-4)) |
-| **+ everything else** | 280+ additional models — the full agentic frontier |
+| Family                | Models                                                                                              |
+| --------------------- | --------------------------------------------------------------------------------------------------- |
+| **Anthropic Claude**  | Opus 4.7, Opus 4.6, Sonnet 4.6, Haiku 4.5                                                           |
+| **OpenAI**            | GPT-5.5, GPT-5.5 Pro, GPT-5.4 Mini, GPT-5.4 Nano, GPT-5.3 Codex                                     |
+| **Google Gemini**     | Gemini 3 Pro Preview, Gemini 3 Flash Preview, Gemini 3.1 Pro Preview, Gemini 3.1 Flash Lite Preview |
+| **DeepSeek**          | DeepSeek V4 Pro                                                                                     |
+| **Qwen**              | Qwen3.7-Max, Qwen3.6-35B-A3B                                                                        |
+| **Kimi / Moonshot**   | Kimi K2.6                                                                                           |
+| **GLM / Zhipu**       | GLM-5.1                                                                                             |
+| **MiniMax**           | MiniMax M2.7                                                                                        |
+| **xAI**               | Grok 4.3                                                                                            |
+| **NVIDIA**            | Nemotron-3 Super 120B-A12B                                                                          |
+| **Tencent**           | Hunyuan 3 Preview                                                                                   |
+| **Xiaomi**            | MiMo V2.5 Pro                                                                                       |
+| **StepFun**           | Step 3.5 Flash                                                                                      |
+| **Hermes**            | Hermes-4-70B, Hermes-4-405B (chat, see [note below](#a-note-on-hermes-4))                           |
+| **+ everything else** | 280+ additional models — the full agentic frontier                                                  |
 
 Routing happens through OpenRouter under the hood, so model availability and failover behavior matches what you'd get with an OpenRouter key — just billed against your Nous subscription instead. Switch between Claude Sonnet 4.6 for code and Gemini 3 Pro for long context with `/model` mid-session — no new credentials, no top-ups, no surprise zero-balance errors.
 
@@ -48,13 +48,13 @@ Routing happens through OpenRouter under the hood, so model availability and fai
 
 The same subscription unlocks the [Tool Gateway](/user-guide/features/tool-gateway), which routes Hermes Agent's tool calls through Nous-managed infrastructure. Five backends, one login:
 
-| Tool | Partner | What it does |
-|------|---------|--------------|
-| **Web search & extract** | Firecrawl | Agent-grade search and full-page extraction. No Firecrawl API key, no rate limit babysitting. |
-| **Image generation** | FAL | Nine models under one endpoint: FLUX 2 Klein 9B, FLUX 2 Pro, Z-Image Turbo, Nano Banana Pro (Gemini 3 Pro Image), GPT Image 1.5, GPT Image 2, Ideogram V3, Recraft V4 Pro, Qwen Image. |
-| **Text-to-speech** | OpenAI TTS | High-quality TTS without a separate OpenAI key. Enables [voice mode](/user-guide/features/voice-mode) across messaging platforms. |
-| **Cloud browser automation** | Browser Use | Headless Chromium sessions for `browser_navigate`, `browser_click`, `browser_type`, `browser_vision`. No Browserbase account needed. |
-| **Cloud terminal sandbox** | Modal | Serverless terminal sandboxes for code execution (optional add-on). |
+| Tool                         | Partner     | What it does                                                                                                                                                                           |
+| ---------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Web search & extract**     | Firecrawl   | Agent-grade search and full-page extraction. No Firecrawl API key, no rate limit babysitting.                                                                                          |
+| **Image generation**         | FAL         | Nine models under one endpoint: FLUX 2 Klein 9B, FLUX 2 Pro, Z-Image Turbo, Nano Banana Pro (Gemini 3 Pro Image), GPT Image 1.5, GPT Image 2, Ideogram V3, Recraft V4 Pro, Qwen Image. |
+| **Text-to-speech**           | OpenAI TTS  | High-quality TTS without a separate OpenAI key. Enables [voice mode](/user-guide/features/voice-mode) across messaging platforms.                                                      |
+| **Cloud browser automation** | Browser Use | Headless Chromium sessions for `browser_navigate`, `browser_click`, `browser_type`, `browser_vision`. No Browserbase account needed.                                                   |
+| **Cloud terminal sandbox**   | Modal       | Serverless terminal sandboxes for code execution (optional add-on).                                                                                                                    |
 
 Without the gateway, hooking each of those up means a Firecrawl account, a FAL account, a Browser Use account, an OpenAI key, and a Modal account — five separate signups, five separate dashboards, five separate top-up flows. With the gateway, all of it routes through one subscription.
 
@@ -85,7 +85,7 @@ They are **not recommended for use inside Hermes Agent**, however. Hermes 4 is t
 /model deepseek/deepseek-v4-pro        # cost-effective coder
 ```
 
-The Portal's own [model info page](https://portal.nousresearch.com/info) carries the same warning, so this isn't a Hermes-side opinion — it's the official guidance from Nous Research.
+The Portal's own [model info page](https://portal.nousresearch.com/info) carries the same warning, so this isn't a Hermes-side opinion — it's the official guidance from Arcadia Global Teknologi
 
 ## Setup
 
@@ -204,7 +204,7 @@ After `hermes setup --portal`, `~/.hermes/config.yaml` will look like:
 ```yaml
 model:
   provider: nous
-  default: anthropic/claude-sonnet-4.6     # or whatever model you picked
+  default: anthropic/claude-sonnet-4.6 # or whatever model you picked
   base_url: https://inference-api.nousresearch.com/v1
 ```
 
@@ -212,7 +212,7 @@ The Tool Gateway settings live under their respective tool sections:
 
 ```yaml
 web:
-  backend: nous       # web search/extract routes through Tool Gateway
+  backend: nous # web search/extract routes through Tool Gateway
 
 image_gen:
   provider: nous

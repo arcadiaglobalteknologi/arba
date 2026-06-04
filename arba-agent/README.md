@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://arcadiaglobalteknologi.com/docs/"><img src="https://img.shields.io/badge/Docs-arcadiaglobalteknologi.com-FFD700?style=for-the-badge" alt="Documentation"></a>
-  <a href="https://github.com/arcadiaglobalteknologi/arba/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+  <a href="https://github.com/arcadiaglobalteknologi/arba/blob/master/arba-agent/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
   <a href="https://arcadiaglobalteknologi.com"><img src="https://img.shields.io/badge/Built%20by-Arcadia%20Global%20Teknologi-blueviolet?style=for-the-badge" alt="Built by Arcadia Global Teknologi"></a>
   <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/Lang-中文-red?style=for-the-badge" alt="中文"></a>
 </p>
@@ -32,7 +32,7 @@ Use any model you want — [Nous Portal](https://portal.nousresearch.com), [Open
 ### Linux, macOS, WSL2, Termux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/master/arba-agent/scripts/install.sh | bash
 ```
 
 ### Windows (native, PowerShell)
@@ -42,7 +42,7 @@ curl -fsSL https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/main/sc
 Run this in PowerShell:
 
 ```powershell
-iex (irm https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/main/scripts/install.ps1)
+iex (irm https://raw.githubusercontent.com/arcadiaglobalteknologi/arba/master/arba-agent/scripts/install.ps1)
 ```
 
 The installer handles everything: uv, Python 3.11, Node.js, ripgrep, ffmpeg, **and a portable Git Bash** (MinGit, unpacked to `%LOCALAPPDATA%\arba\git` — no admin required, completely isolated from any system Git install). Arba uses this bundled Git Bash to run shell commands.

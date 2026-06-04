@@ -47,7 +47,7 @@ Hermes 刻意将以下内容分离：
 
 ```
 # Layer 1: Agent Identity (from ~/.hermes/SOUL.md)
-You are Hermes, an AI assistant created by Nous Research.
+You are Hermes, an AI assistant created by Arcadia Global Teknologi
 You are an expert software engineer and researcher.
 You value correctness, clarity, and efficiency.
 ...
@@ -137,7 +137,7 @@ def load_soul_md() -> Optional[str]:
 若 `SOUL.md` 不存在，系统将回退到：
 
 ```
-You are Hermes Agent, an intelligent AI assistant created by Nous Research.
+You are Hermes Agent, an intelligent AI assistant created by Arcadia Global Teknologi
 You are helpful, knowledgeable, and direct. You assist users with a wide
 range of tasks including answering questions, writing and editing code,
 analyzing information, creative work, and executing actions via your tools.
@@ -186,14 +186,15 @@ def build_context_files_prompt(cwd=None, skip_soul=False):
 
 ### 上下文文件发现详情
 
-| 优先级 | 文件 | 搜索范围 | 说明 |
-|--------|------|----------|------|
-| 1 | `.hermes.md`、`HERMES.md` | 从 CWD 向上至 git 根目录 | Hermes 原生项目配置 |
-| 2 | `AGENTS.md` | 仅 CWD | 常见 agent 指令文件 |
-| 3 | `CLAUDE.md` | 仅 CWD | Claude Code 兼容性 |
-| 4 | `.cursorrules`、`.cursor/rules/*.mdc` | 仅 CWD | Cursor 兼容性 |
+| 优先级 | 文件                                  | 搜索范围                 | 说明                |
+| ------ | ------------------------------------- | ------------------------ | ------------------- |
+| 1      | `.hermes.md`、`HERMES.md`             | 从 CWD 向上至 git 根目录 | Hermes 原生项目配置 |
+| 2      | `AGENTS.md`                           | 仅 CWD                   | 常见 agent 指令文件 |
+| 3      | `CLAUDE.md`                           | 仅 CWD                   | Claude Code 兼容性  |
+| 4      | `.cursorrules`、`.cursor/rules/*.mdc` | 仅 CWD                   | Cursor 兼容性       |
 
 所有上下文文件均会：
+
 - **安全扫描** — 检查 prompt 注入模式（不可见 unicode、"ignore previous instructions"、凭据窃取尝试）
 - **截断处理** — 使用 70/20 头尾比例上限为 20,000 字符，并附截断标记
 - **剥离 YAML frontmatter** — `.hermes.md` 的 frontmatter 会被移除（保留供未来配置覆盖使用）
